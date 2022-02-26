@@ -28,8 +28,6 @@ public class Movie {
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="director_id")
 	Director director;
-	
-	
 
 	public int getId() {
 		return id;
@@ -53,5 +51,13 @@ public class Movie {
 
 	public void setGenre(String genre) {
 		this.genre = genre;
+	}
+
+	public Director getDirector() {
+		return director;
+	}
+
+	public void setDirector(Director director) {
+		this.director = director;
 	}
 }

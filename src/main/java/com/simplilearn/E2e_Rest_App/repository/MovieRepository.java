@@ -14,6 +14,6 @@ public interface MovieRepository extends CrudRepository<Movie, Integer> {
 	
 	public Movie findByName(String name);
 	
-
+	@Query("select movie from Movie movie left join Director director on movie.director.id = director.id where director.directorName = :directorName")
 	public List<Movie> findByDirectorName(String directorName) ;
 }

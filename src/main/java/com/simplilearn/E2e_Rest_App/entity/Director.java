@@ -8,8 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="director")
 public class Director {
 
 	@Id
@@ -22,4 +24,28 @@ public class Director {
 	
 	@OneToMany(mappedBy = "director", cascade= CascadeType.ALL)
 	private List<Movie> movies;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getDirectorName() {
+		return directorName;
+	}
+
+	public void setDirectorName(String directorName) {
+		this.directorName = directorName;
+	}
+
+	public List<Movie> getMovies() {
+		return movies;
+	}
+
+	public void setMovies(List<Movie> movies) {
+		this.movies = movies;
+	}
 }
